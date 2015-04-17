@@ -5,10 +5,15 @@ Cloud services introduce new security threats into the world of computing, ones 
 
 Detection strategies are the last line of defense against any attack on a computer system. The ability to detect a compromised segment of the system is crucial if one is to combat and terminate the threat. The administrator threat is one which is particularly difficult to detect, as the perpetrator of such an attack has the access level of a system administrator giving the attacker the ability to traverse the systems undetected. The methods employed to detect an administrator attack have to be implemented across the all infrastructure of the cloud system.\cite{dawoud}
 
-Prevention strategies are ones which are common to both classical and cloud computing such as cloning, encryption, migration, deletion. Although the strategies may differ slightly in their application depending on the domain, the general idea behind them is the same.
+Prevention strategies are ones which are common to both classical and cloud computing such as cloning, encryption, migration, deletion. Although the strategies may differ slightly in their application depending on the domain, the general idea behind them is the same (see figure \ref{prevention_detection_image}).
 This section will explore the medium which is most vulnerable to the administrator threat, and the techniques that can be used to prevent against and detect the threat.
 
-%put some diagrams in here
+\begin{figure}
+  \centering
+    \includegraphics[height=3.5cm, width=4cm]{logging}
+  \caption{Progression of a prevention and detection strategy to protect against administrator threats}
+  \label{prevention_detection_image}
+\end{figure}
 
 \subsection{Higher Level Infrastrcutre}
 \label{hlInfrastructure}
@@ -21,6 +26,7 @@ The infrastructure of any computer system is the base on which its entire set of
 
 Logging on its own is not much help unless there is something to realize when a misuse of power has occured.\cite{althebyan} There have been may systems developed to take advantage of the bread crumbs left behind in the form of log files. In general these systems build a knowledge over time of user patterns, then if one of these patterns ever deviates there is a chance of a leak, MIDAS is one of these systems. MIDAS or Monitoring Intrusion Detection Administrator System, is a type of Big Brother system which has a global overview of all actions which occur on the system.\cite{nguyen} Some other systems which employ the same relative strategy as MIDAS are NSM, DPEM, the latter mentioned systems are more directed at network security and unix process security respectfully. Many of the systems mentioned above are currently being used and some are offered as open source works, but there is no research available into the effectiveness of these systems. The idea of tracing the paths which programs, users, and network packets take is not a new idea, but it has been repurposed to monitor and maintain a secure infrastructure in cloud software systems.\cite{nguyen}\cite{mukherjee}
 
+
 \label{hlSecureHW}
 
 \textbf{Secure Hardware :} Digging a little deeper into system infrastructure, the lowest level of defense against administrator attacks is directly built into the hardware. Secure hardware is an area of research which is gaining steam in the hardware, especially the processor, manufacturing field. In particular there are two hardware components that are targets of data theft and hacking, that is RAM and the CPU. The nature of these components as memory storage and computational units make them good targets for insiders to execute unsafe code, or modify the memory or execution of a running process. Intel has combated this in part by developed a technology which they have termed Intel SGX.\cite{baumann} SGX allows for isolated execution by providing a cache, called the Enclave, which is locked during execution from all other resources. This allows for a process to run without interruption from other unsafe or unauthorized process. This type of technology would allow for specified processes to be safely hidden from even the most privileged users subsequently eliminating the chances for an insider to attack. Microsoft has picked up on this new technology and plans to implement it along with some other forms of cloud data security in their cloud protection system termed Haven. Havens' main security will be the isolated execution property of Intel SGX enabled chips.\cite{baumann}
@@ -31,7 +37,14 @@ The importance of a solid infrastructure is becoming clearer, and it can be seen
 
 \label{hlHoneyPots}
 
-\textbf{HoneyPots} are an important technology when it comes to detecting administrator or insider threats. They give the ability for data to be gathered on the attacker as the attack is being performed. This is the key to the HoneyPots technology, they act as counterfeit files, computers, networks, etc. and in order for them to be efficient there must be an attack on any of these imitations. \cite{spitzner} Than one risk when using HoneyPot systems is the other instances of HoneyPot systems are linked together, and the attack may be able to feed it false information. This system focuses on protecting the infrastructure of a system, and is a valuable tool as long as the insiders continue to use the HoneyPot instances.  \cite{spitzner}
+\begin{figure}
+  \centering
+    \includegraphics[width=\linewidth]{honeypots}
+  \caption{An simple example of a networking with a HoneyPot sever.}
+  \label{honeypot_image}
+\end{figure}
+
+\textbf{HoneyPots} are an important technology when it comes to detecting administrator or insider threats. They give the ability for data to be gathered on the attacker as the attack is being performed. This is the key to the HoneyPots technology, they act as counterfeit files, computers, networks, etc. and in order for them to be efficient there must be an attack on any of these imitations ( see figure \ref{honeypot_image} for an example HoneyPot setup ). \cite{spitzner} Than one risk when using HoneyPot systems is the other instances of HoneyPot systems are linked together, and the attack may be able to feed it false information. This system focuses on protecting the infrastructure of a system, and is a valuable tool as long as the insiders continue to use the HoneyPot instances. \cite{spitzner}
 
 \subsection{Lower Level Infrastructure}
 \label{llInfrastructure}
