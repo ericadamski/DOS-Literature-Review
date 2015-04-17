@@ -2,7 +2,9 @@
 \label{overview}
 
 Cloud services introduce new security threats into the world of computing, ones that render classical computing security measures partially, and in some cases entirely, ineffective. The three mediums which cloud technologies are accessible through SaaS, PaaS, and IaaS each lend themselves to differing levels of vulnerability. When combating any threat, whether it be a classical computing threat or a threat unique to cloud systems, there is two types of strategies which are employed.
+
 Detection strategies are the last line of defense against any attack on a computer system. The ability to detect a compromised segment of the system is crucial if one is to combat and terminate the threat. The administrator threat is one which is particularly difficult to detect, as the perpetrator of such an attack has the access level of a system administrator giving the attacker the ability to traverse the systems undetected. The methods employed to detect an administrator attack have to be implemented across the all infrastructure of the cloud system.
+
 Prevention strategies are ones which are common to both classical and cloud computing such as cloning, encryption, migration, deletion. Although the strategies may differ slightly in their application depending on the domain, the general idea behind them is the same.
 This section will explore the medium which is most vulnerable to the administrator threat, and the techniques that can be used to prevent against and detect the threat.
 
@@ -17,6 +19,7 @@ The infrastructure of any computer system is the base on which its entire set of
 \label{hlLogging}
 
 Logging has been used by computer programmers as the looking glass into the brain of a computer. It allows a programmer to see the execution of their program which gives them insight on how the software is working and what functions are being performed. This is the same idea behind detecting an administrator attack. Logging can be seen as a preventative measure against insider attacks as it provides a deterrent to those thinking of steal customer information although it is employed as more of a detective feature of software systems. Just as a computer programmer wants to follow the execution of a program, logging of system access creates a path that can be followed to detect misuse of power through the system.
+
 Logging on its own is not much help unless there is something to realize when a misuse of power has occured. There have been may systems developed to take advantage of the bread crumbs left behind in the form of log files. In general these systems build a knowledge over time of user patterns, then if one of these patterns ever deviates there is a chance of a leak, MIDAS is one of these systems. MIDAS or Monitoring Intrusion Detection Administrator System, is a type of Big Brother system which has a global overview of all actions which occur on the system. Some other systems which employ the same relative strategy as MIDAS are NSM, DPEM, the latter mentioned systems are more directed at network security and unix process security respectfully. The idea of tracing the paths which programs, users, and network packets take is not a new idea, but it has been repurposed to monitor and maintain a secure infrastructure in cloud software systems.
 
 \subsubsection{Secure Hardware}
